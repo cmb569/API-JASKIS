@@ -8,6 +8,8 @@
 // 2. Create a collection called bounties
 //db.createCollection('bounties')
 
+///////////////////////////////////////////////////////////
+
 
 // ADD THE ANIMAL BOUNTIES
 // 1. Insert the given "Thanoceros" bounty object
@@ -83,7 +85,7 @@
    }
   ])*/
 
-
+///////////////////////////////////
 
 // MANAGE THE DATABASE
 // Queries
@@ -91,10 +93,10 @@
 //db.bounties.find({location:"Grasslands"})
 
 // 2. Query for all bounties with a reward worth 10000 or more
-//db.bounties.find({ reward: { $elemMatch: { $gte: 1000}}})
+//db.bounties.find({ reward: { $gte: 1000}})
 
 // 3. Query for all bounties, but exclude the client attribute from being shown
-//db.bounties.find( {},{client:0})
+//db.bounties.find({},{client:0})
 
 // 4. Query for a Groundhog in the Woodlands
 //db.bounties.find({species: "Groundhog", location: "Woodlands"})
@@ -103,9 +105,10 @@
 ////////////////////////////////////////////////
 // Update and Delete
 // 1. Update the reward for Polarwind to 10000
-/*db.bounties.updateOne(
-   {reward:4000}
-   {set: {reward: 10000}}
+/*db.bounties.findOne({name:"Polarwind"})
+then I did the update:
+db.bounties.updateOne(
+{ reward: 4000 }, { $set: { reward: 10000 } })
 )*/
 
 // 2. Remove Lokinkajou
@@ -116,6 +119,6 @@
 
 // 4. Update all captured statuses to true
 /*db.bounties.updateMany(
-    {  status: captured}, 
-    { $set: {  status: true }}
+{ captured: false }, { $set: { captured: true } }
+)
 )*/
